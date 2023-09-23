@@ -1,6 +1,13 @@
+import { useState } from "react";
 
 function Category() {
   
+  const [newCategory, setNewCategory] = useState('');
+
+  const addCategoryHandler = (e : Event) => {
+    e.preventDefault();
+  }
+
   return (
     <div className="w-1/2 mx-auto">
       <div className="flex justify-between mt-12 shadow-md p-5 bg-white">
@@ -17,7 +24,18 @@ function Category() {
           </tr>
         </thead>
         <tbody>
-          
+          <tr>
+            <td></td>
+            <td>
+              <form>
+                <input placeholder="Name" value={newCategory} onChange={(e) => setNewCategory(e.target.value)}/>
+              </form>
+            </td>
+            <td></td>
+          </tr>
+          {
+            
+          }
         </tbody>
       </table>
     </div>
