@@ -12,8 +12,19 @@ import { AiOutlineCloseSquare } from "react-icons/ai";
 import NoData from "../../assets/images/NoData.jpg";
 import { toast } from "react-toastify";
 import { toastConfig } from "../../constants";
+import { useEffect } from "react";
 
 function Category() {
+  useEffect(() => {
+    // Set the new title when the component mounts
+    document.title = "Expense Tracker | Categories";
+
+    // Optionally, you can reset the title when the component unmounts
+    return () => {
+      document.title = "Expense Tracker";
+    };
+  }, []);
+
   const [newCategory, setNewCategory] = useState<string>("");
   const [addNewCategory, setAddNewCategory] = useState<boolean>(false);
 
@@ -71,8 +82,13 @@ function Category() {
                   <p className="font-bold">{category.name}</p>
                 </div>
                 <div className="flex justify-between">
-                  <button disabled={category.primary}
-                    title={category.primary ? 'Cannot delete primary category' : 'delete'}
+                  <button
+                    disabled={category.primary}
+                    title={
+                      category.primary
+                        ? "Cannot delete primary category"
+                        : "delete"
+                    }
                     className="bg-red-400 bg-opacity-30 shadow"
                     onClick={() =>
                       dispatch(removeCategory({ id: category.id }))

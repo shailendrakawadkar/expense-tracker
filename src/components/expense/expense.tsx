@@ -15,8 +15,19 @@ import { Category } from "../../models/category";
 import NoData from "../../assets/images/NoData.jpg";
 import { toast } from "react-toastify";
 import { toastConfig } from "../../constants";
+import { useEffect } from "react";
 
 function Expense() {
+  useEffect(() => {
+    // Set the new title when the component mounts
+    document.title = "Expense Tracker | Expenses";
+
+    // Optionally, you can reset the title when the component unmounts
+    return () => {
+      document.title = "Expense Tracker";
+    };
+  }, []);
+
   const [newExpense, setNewExpense] = useState<any>({});
   const [addNewExpense, setAddNewExpense] = useState<boolean>(false);
 
@@ -88,7 +99,7 @@ function Expense() {
                       {expense.Amount}
                     </p>
                     <button
-                    title="delete"
+                      title="delete"
                       className="bg-red-400 bg-opacity-30 shadow"
                       onClick={() =>
                         dispatch(removeExpense({ Id: expense.Id }))
@@ -146,8 +157,10 @@ function Expense() {
                 <option value="" disabled>
                   Select Category
                 </option>
-                {categories.map((category: Category) => (
-                  <option value={category.name}>{category.name}</option>
+                {categories.map((category: Category, index: number) => (
+                  <option key={index} value={category.name}>
+                    {category.name}
+                  </option>
                 ))}
               </select>
             </div>
