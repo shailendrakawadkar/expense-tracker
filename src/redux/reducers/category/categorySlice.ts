@@ -14,7 +14,7 @@ const categorySlice = createSlice({
                 id : nanoid(),
                 name : action.payload.name
             }
-            state.categories.push(category);
+            state.categories.unshift(category);
         },
 
         removeCategory : (state, action) => {

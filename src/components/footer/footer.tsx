@@ -1,13 +1,14 @@
 import { TfiGithub } from "react-icons/tfi";
 import { FaLinkedinIn } from "react-icons/fa";
 import { SiLeetcode, SiCodechef } from "react-icons/si";
+import { AiFillHeart } from "react-icons/ai";
 
 function Footer() {
   return (
     <div className="container font-semibold text-center p-4 bottom-0 shadow-inner absolute">
-      <div className="grid grid-cols-2 text-center">
+      <div className="grid md:grid-cols-2 sm:grid-cols-1 text-center">
         <p>
-          Made with <i className="fas fa-heart text-red-500"></i> by Shailendra
+          Made with <AiFillHeart className="inline text-red-600"/> by Shailendra
           Kawadkar
         </p>
         <div className="flex flex-auto justify-center gap-4">

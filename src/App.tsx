@@ -1,22 +1,21 @@
 import './App.css';
-import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
+import { Route, Routes } from 'react-router-dom';
 import Dashboard from './components/dashboard/dashboard';
 import Expense from './components/expense/expense';
 import Category from './components/category/category';
-import Report from './components/report/report';
+import NotFound from './components/notFound/notfound';
 
 
 function App() {
 
   return (
-    <Router>
       <Routes>
           <Route path="/" Component={Dashboard} />
+          <Route path="/dashboard" Component={Dashboard} />
           <Route path="/expenses" Component={Expense}  />
           <Route path="/categories" Component={Category}  />
-          <Route path="/reports" Component={Report}  />
+          <Route path="*" Component={NotFound}  />
       </Routes>
-    </Router>
   )
 }
 
