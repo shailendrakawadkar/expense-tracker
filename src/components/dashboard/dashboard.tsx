@@ -1,4 +1,3 @@
-import { RootStateOrAny } from "react-redux";
 import { useSelector } from "react-redux";
 import { Expense } from "../../models/expense";
 import { useEffect } from "react";
@@ -15,7 +14,7 @@ function Dashboard() {
   }, []);
 
   const expenses = useSelector(
-    (state: RootStateOrAny) => state.expense.expenses
+    (state: any) => state.expense.expenses
   );
 
   // Get the current date

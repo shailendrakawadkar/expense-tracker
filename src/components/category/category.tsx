@@ -1,6 +1,6 @@
 import { useState } from "react";
 import { useDispatch } from "react-redux";
-import { RootStateOrAny } from "react-redux";
+import {  } from "react-redux";
 import { useSelector } from "react-redux";
 import {
   addCategory,
@@ -31,10 +31,10 @@ function Category() {
   const dispatch = useDispatch();
 
   const categories = useSelector(
-    (state: RootStateOrAny) => state.category.categories
+    (state: any) => state.category.categories
   );
 
-  const addCategoryHandler = (e) => {
+  const addCategoryHandler = (e : any) => {
     e.preventDefault();
 
     const index = categories.findIndex(

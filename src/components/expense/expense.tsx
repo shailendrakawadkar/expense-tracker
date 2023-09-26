@@ -1,5 +1,4 @@
 import { useState } from "react";
-import { RootStateOrAny } from "react-redux";
 import { useSelector } from "react-redux";
 import { useDispatch } from "react-redux";
 import { Expense as ExpenseModel } from "../../models/expense";
@@ -34,14 +33,14 @@ function Expense() {
   const dispatch = useDispatch();
 
   const expenses = useSelector(
-    (state: RootStateOrAny) => state.expense.expenses
+    (state: any) => state.expense.expenses
   );
 
   const categories = useSelector(
-    (state: RootStateOrAny) => state.category.categories
+    (state: any) => state.category.categories
   );
 
-  const addExpenseHandler = (e) => {
+  const addExpenseHandler = (e : any) => {
     e.preventDefault();
     dispatch(
       addExpense({
