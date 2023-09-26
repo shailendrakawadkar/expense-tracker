@@ -88,6 +88,7 @@ function Expense() {
                       {expense.Amount}
                     </p>
                     <button
+                    title="delete"
                       className="bg-red-400 bg-opacity-30 shadow"
                       onClick={() =>
                         dispatch(removeExpense({ Id: expense.Id }))

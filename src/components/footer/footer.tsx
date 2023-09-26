@@ -14,7 +14,8 @@ function Footer() {
         <div className="flex flex-auto justify-center gap-4">
           {/* <!-- LinkedIn --> */}
           <a
-            href="https://www.linkedin.com/in/your-profile"
+            title="LinkedIn"
+            href="https://www.linkedin.com/in/shailendrakawadkar"
             target="_blank"
             className="text-blue-700 mr-4 hover:text-blue-500 text-xl p-2 shadow-md"
           >
@@ -23,7 +24,8 @@ function Footer() {
 
           {/* <!-- GitHub --> */}
           <a
-            href="https://github.com/your-username"
+           title="Github"
+            href="https://github.com/shailendrakawadkar"
             target="_blank"
             className="text-gray-800  mr-4 hover:text-gray-600 text-xl p-2 shadow-md"
           >
@@ -32,7 +34,8 @@ function Footer() {
 
           {/* <!-- LeetCode --> */}
           <a
-            href="https://leetcode.com/your-username"
+           title="Leetcode"
+            href="https://leetcode.com/shailendrakawadkar"
             target="_blank"
             className="text-orange-500 mr-4 hover:text-orange-400 text-xl p-2 shadow-md"
           >
@@ -41,7 +44,8 @@ function Footer() {
 
           {/* <!-- CodeChef --> */}
           <a
-            href="https://www.codechef.com/users/your-username"
+            title="Codechef"
+            href="https://www.codechef.com/users/shailu_"
             target="_blank"
             className="text-red-600 hover:text-red-500 text-xl p-2 shadow-md"
           >

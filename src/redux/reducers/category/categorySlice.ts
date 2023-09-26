@@ -2,7 +2,13 @@ import {createSlice, nanoid} from "@reduxjs/toolkit";
 import { Category } from "../../../models/category";
 
 const initialState = {
-    categories : [] as Category[] 
+    categories : [
+        {id : "1", name : 'Education', primary : true},
+        {id : "2", name : 'Shopping', primary : true},
+        {id : "3", name : 'Health Care', primary : true},
+        {id : "4", name : 'Food', primary : true},
+        {id : "5", name : 'Groceries', primary : true},
+    ] as Category[] 
 };
 
 const categorySlice = createSlice({
@@ -12,7 +18,8 @@ const categorySlice = createSlice({
         addCategory : (state, action) => {
             const category = {
                 id : nanoid(),
-                name : action.payload.name
+                name : action.payload.name,
+                primary : false
             }
             state.categories.unshift(category);
         },

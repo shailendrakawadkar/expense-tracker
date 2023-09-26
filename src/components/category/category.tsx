@@ -71,7 +71,8 @@ function Category() {
                   <p className="font-bold">{category.name}</p>
                 </div>
                 <div className="flex justify-between">
-                  <button
+                  <button disabled={category.primary}
+                    title={category.primary ? 'Cannot delete primary category' : 'delete'}
                     className="bg-red-400 bg-opacity-30 shadow"
                     onClick={() =>
                       dispatch(removeCategory({ id: category.id }))
